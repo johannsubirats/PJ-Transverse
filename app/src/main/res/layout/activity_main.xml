@@ -75,6 +75,7 @@
                     android:id="@+id/imageButton3"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:onClick="ConcerningActivity"
                     app:srcCompat="@drawable/logo" />
             </LinearLayout>
 
