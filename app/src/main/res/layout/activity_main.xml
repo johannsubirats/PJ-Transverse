@@ -23,10 +23,14 @@
             android:orientation="horizontal"></LinearLayout>
 
         <LinearLayout
+
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="-200px"
-            android:paddingHorizontal="20px"
+            android:background="#FFFFFF"
+            android:layout_marginTop="-50dp"
+            android:layout_marginBottom="0dp"
+            android:paddingHorizontal="2dp"
+            android:padding="2dp"
             android:layout_weight="1"
             android:orientation="horizontal">
 
@@ -43,6 +47,7 @@
                     android:id="@+id/imageButton"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:background="#FFFFFF"
                     android:onClick="calendrier"
                     app:srcCompat="@drawable/calendrier"/>
             </LinearLayout>
@@ -59,6 +64,7 @@
                     android:id="@+id/imageButton2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:background="#FFFFFF"
                     android:onClick="localisation"
                     app:srcCompat="@drawable/carte" />
             </LinearLayout>
@@ -75,8 +81,10 @@
                     android:id="@+id/imageButton3"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:onClick="ConcerningActivity"
-                    app:srcCompat="@drawable/logo" />
+                    android:background="#FFFFFF"
+                    android:onClick="logocentral"
+                    app:srcCompat="@drawable/logomini2"
+                    tools:ignore="OnClick" />
             </LinearLayout>
 
             <LinearLayout
@@ -91,6 +99,7 @@
                     android:id="@+id/imageButton4"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:background="#FFFFFF"
                     android:onClick="recherche"
                     app:srcCompat="@drawable/recherche" />
             </LinearLayout>
@@ -107,8 +116,10 @@
                     android:id="@+id/imageButton5"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:background="#FFFFFF"
                     app:srcCompat="@drawable/solution" />
             </LinearLayout>
         </LinearLayout>
     </LinearLayout>
+
 </android.support.constraint.ConstraintLayout>
