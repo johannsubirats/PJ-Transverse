@@ -51,6 +51,14 @@
                 android:value=".MainActivity" />
         </activity>
 
+        <activity android:name=".logocentral"
+            android:label="Logocentral"
+            android:theme="@style/AppTheme">
+            <meta-data
+                android:name="android.support.PARENT.ACTIVITY"
+                android:value=".MainActivity" />
+        </activity>
+
     </application>
 
 </manifest>

@@ -19,5 +19,6 @@ public class MainActivity extends AppCompatActivity {
     public void recherche(View view){
         startActivity(new Intent(this,recherche.class));
     }
-    public void ConcerningActivity(View view){startActivity(new Intent(this,ConcerningActivity.class)); }
+    public void logocentral(View view){startActivity(new Intent(this,logocentral.class));
+    }
 }
