@@ -39,8 +39,7 @@ public class DatabaseAccess {
     /**
      * Open the database connection.
      */
-    public void open() {
-        this.database = openHelper.getWritableDatabase();
+    public void open() { this.database = openHelper.getWritableDatabase();
     }
 
     /**
@@ -59,7 +58,7 @@ public class DatabaseAccess {
      */
     public List<String> getname() {
         List<String> list = new ArrayList<>();
-        Cursor cursor = database.rawQuery("SELECT * FROM table_name", null);
+        Cursor cursor = database.rawQuery("SELECT * FROM TEST", null);
         cursor.moveToFirst();
         while (!cursor.isAfterLast()) {
             list.add(cursor.getString(0));

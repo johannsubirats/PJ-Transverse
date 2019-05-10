@@ -17,12 +17,12 @@ public class recherche extends AppCompatActivity {
         setContentView(R.layout.recherche);
 
         this.listView = (ListView) findViewById(R.id.listView);
-        DatabaseAccess databaseAccess = DatabaseAccess.getInstance(this);
+        DatabaseAccess databaseAccess =     DatabaseAccess.getInstance(this);
         databaseAccess.open();
-        List<String> quotes = databaseAccess.getname();
+        List<String> getname = databaseAccess.getname();
         databaseAccess.close();
 
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, quotes);
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, android.R.id.text1, getname);
         this.listView.setAdapter(adapter);
     }
 }
