@@ -11,11 +11,14 @@ import android.view.View;
 
 
 
+
 import java.util.List;
 
 
 public class recherche extends AppCompatActivity {
     private ListView listView;
+
+    DatabaseHelper DatabaseHelper;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,7 +39,7 @@ public class recherche extends AppCompatActivity {
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 String name = adapterView.getItemAtPosition(i).toString();
 
-                Cursor data =  DatabaseHelper.getID(name); //get the id associated with that name  (johann made it static)
+                Cursor data = DatabaseHelper.getID(name); //get the id associated with that name
                 int itemID = -1;
                 while (data.moveToNext()) {
                     itemID = data.getInt(0);

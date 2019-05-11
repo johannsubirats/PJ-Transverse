@@ -6,6 +6,8 @@ import android.database.sqlite.SQLiteDatabase;
 
 import com.readystatesoftware.sqliteasset.SQLiteAssetHelper;
 
+import java.util.ArrayList;
+import java.util.List;
 
 
 public class DatabaseHelper extends SQLiteAssetHelper {
@@ -24,7 +26,7 @@ public class DatabaseHelper extends SQLiteAssetHelper {
         super(context, TAG, null, 1);
     }
 
-    public static Cursor getID(String name) {
+    public Cursor getID(String name) {
         SQLiteDatabase db = this.getWritableDatabase();
         String query = "SELECT " + COL1 + " FROM " + TABLE_NAME +
                 " WHERE " + COL2 + " = '" + name + "'";
