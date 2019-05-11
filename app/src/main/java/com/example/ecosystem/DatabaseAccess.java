@@ -58,10 +58,10 @@ public class DatabaseAccess {
      */
     public List<String> getname() {
         List<String> list = new ArrayList<>();
-        Cursor cursor = database.rawQuery("SELECT * FROM TEST", null);
+        Cursor cursor = database.rawQuery("SELECT * FROM objet", null);
         cursor.moveToFirst();
         while (!cursor.isAfterLast()) {
-            list.add(cursor.getString(0));
+            list.add(cursor.getString(1));
             cursor.moveToNext();
         }
         cursor.close();
