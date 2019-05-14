@@ -4,13 +4,12 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.CalendarView;
 import android.widget.TextView;
-import android.widget.Toast;
+
 
 public class calendrier extends AppCompatActivity {
 
     CalendarView calendarView;
     TextView dateDisplay;
-    TextView info;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,7 +28,7 @@ public class calendrier extends AppCompatActivity {
                     dateDisplay.setText("Date: " + i2 + " / " + (i1+1) + " / " + i + "\n\n" + "C'est le jour de la collecte des poubelles jaunes : emballages, journaux, magazines.");
                 }
                 else if ((i2 == 4) || (i2 == 7) ||(i2 == 11) || (i2 == 14) || (i2 == 18) || (i2 == 21) || (i2 == 25) || (i2 == 28) && i1 == 4){
-                    dateDisplay.setText("Date: " + i2 + " / " + (i1+1) + " / " + i + "\n\n" + "C'est le jour de la collecte des poubelles marrons : ordures ménagères.");
+                    dateDisplay.setText("Date: " + i2 + " / " + (i1+1) + " / " + i + "\n\n" + "C'est le jour de la collecte des poubelles marrons : ordures mÃ©nagÃ¨res.");
                 }
                 else{
                     dateDisplay.setText("Date: " + i2 + " / " + (i1+1) + " / " + i + "\n\n" + "Il n'y a aucune collecte aujourd'hui.");

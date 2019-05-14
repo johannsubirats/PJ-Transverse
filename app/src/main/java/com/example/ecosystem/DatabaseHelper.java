@@ -26,10 +26,32 @@ public class DatabaseHelper extends SQLiteAssetHelper {
         super(context, TAG, null, 1);
     }
 
-    public Cursor getID(String name) {
+    public Cursor getItemID(String name) {
         SQLiteDatabase db = this.getWritableDatabase();
         String query = "SELECT " + COL1 + " FROM " + TABLE_NAME +
                 " WHERE " + COL2 + " = '" + name + "'";
+        Cursor data = db.rawQuery(query, null);
+        return data;
+    }
+
+    public Cursor getProduit(int ID) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        String query = "SELECT " + COL2 + " FROM " + TABLE_NAME +
+                " WHERE " + COL1 + " = '" + ID + "'";
+        Cursor data = db.rawQuery(query, null);
+        return data;
+    }
+    public Cursor getPoubelle(int ID) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        String query = "SELECT " + COL3 + " FROM " + TABLE_NAME +
+                " WHERE " + COL1 + " = '" + ID + "'";
+        Cursor data = db.rawQuery(query, null);
+        return data;
+    }
+    public Cursor getDescription(int ID) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        String query = "SELECT " + COL4 + " FROM " + TABLE_NAME +
+                " WHERE " + COL1 + " = '" + ID + "'";
         Cursor data = db.rawQuery(query, null);
         return data;
     }

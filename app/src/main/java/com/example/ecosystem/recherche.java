@@ -8,9 +8,7 @@ import android.widget.ListView;
 import android.database.Cursor;
 import android.content.Intent;
 import android.view.View;
-
-
-
+import android.widget.Toast;
 
 import java.util.List;
 
@@ -18,15 +16,17 @@ import java.util.List;
 public class recherche extends AppCompatActivity {
     private ListView listView;
 
-    DatabaseHelper DatabaseHelper;
+    DatabaseHelper mDatabaseHelper;
+    private static final String TAG = "recherche";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.recherche);
+        mDatabaseHelper = new DatabaseHelper(this);
 
         this.listView = (ListView) findViewById(R.id.listView);
-        DatabaseAccess databaseAccess =     DatabaseAccess.getInstance(this);
+        DatabaseAccess databaseAccess = DatabaseAccess.getInstance(this);
         databaseAccess.open();
         List<String> getname = databaseAccess.getname();
         databaseAccess.close();
@@ -37,17 +37,27 @@ public class recherche extends AppCompatActivity {
         this.listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                String name = adapterView.getItemAtPosition(i).toString();
+                String name = (String)adapterView.getItemAtPosition(i);
 
-                Cursor data = DatabaseHelper.getID(name); //get the id associated with that name
+                Toast toast = Toast.makeText(getApplicationContext(), "You Clicked on : " + name, Toast.LENGTH_SHORT);
+                toast.show();
+
+                Cursor data = mDatabaseHelper.getItemID(name); //get the id associated with that name
+
                 int itemID = -1;
                 while (data.moveToNext()) {
                     itemID = data.getInt(0);
                 }
-                Intent produit = new Intent(recherche.this, produit.class);
-                produit.putExtra("ID", itemID);
-                produit.putExtra("Name", name);
-                startActivity(produit);
+                if(itemID > -1) {
+                    Intent produit = new Intent(recherche.this, produit.class);
+                    produit.putExtra("ID", itemID);
+                    produit.putExtra("Name", name);
+                    startActivity(produit);
+                }
+                else {
+                    Toast.makeText(getApplicationContext(), "No ID associated with that name", Toast.LENGTH_SHORT).show();
+                }
+
             }
         });
     }
