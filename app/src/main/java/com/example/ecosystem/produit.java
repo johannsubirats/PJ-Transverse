@@ -28,7 +28,7 @@ public class produit extends AppCompatActivity {
         selectedName = receivedIntent.getStringExtra("Name");
 
         TextView textView = (TextView) findViewById(R.id.Text1);
-        textView.setText("Produit : " + selectedName); //set text for text view
+        textView.setText(selectedName); //set text for text view
 
 
         Cursor data = mDatabaseHelper.getPoubelle(selectedID);
@@ -37,7 +37,7 @@ public class produit extends AppCompatActivity {
             Poubelle = data.getString(0);
         }
         textView = (TextView) findViewById(R.id.Text2);
-        textView.setText("Poubelle : " + Poubelle); //set text for text view
+        textView.setText(Poubelle); //set text for text view
 
 
         Cursor data2 = mDatabaseHelper.getDescription(selectedID);
@@ -46,7 +46,7 @@ public class produit extends AppCompatActivity {
             Description = data2.getString(0);
         }
         textView = (TextView) findViewById(R.id.Text3);
-        textView.setText("Description : " + Description); //set text for text view
+        textView.setText(Description); //set text for text view
 
     }
 }

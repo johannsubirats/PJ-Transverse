@@ -9,6 +9,9 @@ import android.database.Cursor;
 import android.content.Intent;
 import android.view.View;
 import android.widget.Toast;
+import android.support.v7.widget.SearchView;
+import android.view.Menu;
+import android.app.SearchManager;
 
 import java.util.List;
 
