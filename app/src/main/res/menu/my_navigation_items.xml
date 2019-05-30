@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/imageButton"
+        android:icon="@drawable/ic_date_range_black_24dp"
+        android:title="Calendrier"/>
+
+    <item android:id="@+id/imageButton2"
+        android:icon="@drawable/ic_explore_black_24dp"
+        android:title="Maps"/>
+
+    <item android:id="@+id/imageButton3"
+        android:icon="@drawable/ic_home_black_24dp"
+        android:title="Home"/>
+
+    <item android:id="@+id/imageButton4"
+        android:icon="@drawable/ic_lightbulb_outline_black_24dp"
+        android:title="Solution"/>
+
+    <item android:id="@+id/imageButton5"
+        android:icon="@drawable/ic_info_black_24dp"
+        android:title="Info"/>
+
+</menu>
