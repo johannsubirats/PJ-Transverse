@@ -1,26 +1,265 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    tools:context=".recherche">
 
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        tools:layout_editor_absoluteX="8dp"
-        tools:layout_editor_absoluteY="8dp"
-        tools:ignore="MissingConstraints">
+        android:layout_above="@id/navigation"
+        tools:layout_editor_absoluteX="278dp"
+        tools:layout_editor_absoluteY="16dp">
 
-
-        <SearchView
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
-    <ListView
-        android:id="@+id/listView"
+            <TextView
+                android:id="@+id/textTitresolution"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:text="Reduire ses déchets afin de sauver la planete!"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/textsolution"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:text="Vos poubelles débordent? Vous ne pouvez plus rien y mettre? Il est sûrement temps de trier vos déchets."
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textTitreProjet" />
+
+            <TextView
+                android:id="@+id/textTitrelimite"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="32dp"
+                android:text="Limiter les emballages :"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textProjet" />
+
+            <LinearLayout
+                android:layout_marginTop="16dp"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:gravity="center_vertical|center_horizontal">
+
+
+                <ImageView
+                    android:id="@+id/imagelimite"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    app:srcCompat="@drawable/limite"
+                    tools:layout_editor_absoluteX="1"
+                    tools:layout_editor_absoluteY="1"/>
+
+                <TextView
+                    android:id="@+id/textlimite"
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginEnd="16dp"
+                    android:text="En effet, les supermarchés proposent souvent des produits en vrac. Riz, légumes et fruits secs, céréales sont mis en vente dans des réservoirs, il suffit alors d’utiliser des bocaux en verres ou des boîtes hermétiques pour les conserver ensuite."
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textTitrePlastique" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/textTitregoodplace"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="32dp"
+                android:text="Mettre ses déchets au bon endroit : "
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textlimite" />
+
+            <LinearLayout
+                android:layout_marginTop="0dp"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:gravity="center_vertical|center_horizontal">
+
+                <ImageView
+                    android:id="@+id/imagegoodplace"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    app:srcCompat="@drawable/goodplace"
+                    tools:layout_editor_absoluteX="1"
+                    tools:layout_editor_absoluteY="1"/>
+
+                <TextView
+                    android:id="@+id/textgoodplace"
+                    android:layout_height="wrap_content"
+                    android:layout_width="300dp"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginBottom="16dp"
+                    android:text="Difficile de s’y retrouver quand il s’agit de trier ses déchets ! Une nouvelle application nommée « Ecosystem » est mise à votre disposition. Il suffit de taper dans la barre de recherche le produit dont on souhaite se séparer pour connaître l’endroit où il faut le jeter. Pratique !"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textTitregoodplace" />
+            </LinearLayout>
+            <TextView
+                android:id="@+id/textTitregaspille"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="32dp"
+                android:text="Halte au gaspillage alimentaire : "
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textgoodplace" />
+
+            <LinearLayout
+                android:layout_marginTop="0dp"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:gravity="center_vertical|center_horizontal">
+
+                <ImageView
+                    android:id="@+id/imagegaspille"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    app:srcCompat="@drawable/gaspille"
+                    tools:layout_editor_absoluteX="1"
+                    tools:layout_editor_absoluteY="1"/>
+
+                <TextView
+                    android:id="@+id/textgaspille"
+                    android:layout_height="wrap_content"
+                    android:layout_width="300dp"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginBottom="16dp"
+                    android:text="Si vous avez un jardin, le compost est sans aucun doute la meilleure solution pour réduire vos déchets. Pour les personnes qui n’ont pas la chance d’avoir un peu de terrain, il existe des petites astuces pour éviter de trop remplir sa poubelle. Le marc de café par exemple peut être mis dans l’évier, qui sera ainsi nettoyé à moindre coût. Pensez aussi à laver et conserver vos bocaux en verre : ils vous serviront toujours pour faire des confitures, des terrines, des achats en vrac voire même servir d’emballage pour un cadeau."
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textTitregaspille" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/textTitredechet"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="32dp"
+                android:text="Aller à la déchèterie : "
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textgaspille" />
+
+            <LinearLayout
+                android:layout_marginTop="0dp"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:gravity="center_vertical|center_horizontal">
+
+                <ImageView
+                    android:id="@+id/imagedechet"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    app:srcCompat="@drawable/dechet"
+                    tools:layout_editor_absoluteX="1"
+                    tools:layout_editor_absoluteY="1"/>
+                <TextView
+                    android:id="@+id/textdechet"
+                    android:layout_height="wrap_content"
+                    android:layout_width="300dp"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginBottom="16dp"
+                    android:text="Avec plus de 4 500 déchèteries en France, vous en avez sûrement une près de chez vous. Il est possible d’y jeter toutes sortes de déchets : les déchets verts (broussailles, feuilles, branches, etc…), les déchets encombrants (pneus, cartons, gravats, meubles, appareils ménagers), les déchets dangereux (peinture, huiles usagées, solvants, etc…)."
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textTitredechet" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/textTitrepile"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="32dp"
+                android:text="Limiter l’usage des piles : "
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textdechet" />
+
+            <LinearLayout
+                android:layout_marginTop="0dp"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:gravity="center_vertical|center_horizontal">
+
+                <ImageView
+                    android:id="@+id/imagepile"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    app:srcCompat="@drawable/pile"
+                    tools:layout_editor_absoluteX="1"
+                    tools:layout_editor_absoluteY="1"/>
+                <TextView
+                    android:id="@+id/textpile"
+                    android:layout_height="wrap_content"
+                    android:layout_width="300dp"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginBottom="16dp"
+                    android:text="Les piles ne peuvent être jetées dans la poubelle des tout-venants, elles doivent être déposées dans un conteneur prévu à cet effet. Afin de limiter leur nombre, il peut être judicieux d’acheter des appareils pouvant être branchés sur un secteur (Mp3, jouets, etc…) ou bien ayant une dynamo (lampe de poche par exemple). Il est également possible d’investir dans des piles rechargeables."
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textTitrepile" />
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+    <android.support.design.widget.BottomNavigationView
+        android:id="@+id/navigation"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_gravity="center" />
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="?android:attr/windowBackground"
+        app:layout_constraintBottom_toBottomOf="@+id/linearLayout"
+        app:menu="@menu/my_navigation_items"
+        tools:layout_editor_absoluteX="0dp" />
 
-    </LinearLayout>
-</FrameLayout>
+</RelativeLayout>

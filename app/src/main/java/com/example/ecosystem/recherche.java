@@ -1,67 +1,50 @@
 package com.example.ecosystem;
 
-import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
-import android.widget.ListView;
-import android.database.Cursor;
 import android.content.Intent;
-import android.view.View;
-import android.widget.Toast;
-import android.support.v7.widget.SearchView;
-import android.view.Menu;
-import android.app.SearchManager;
+import android.os.Bundle;
+import android.support.annotation.NonNull;
+import android.support.design.widget.BottomNavigationView;
+import android.support.v7.app.AppCompatActivity;
+import android.view.MenuItem;
 
-import java.util.List;
-
-
-public class recherche extends AppCompatActivity {
-    private ListView listView;
-
-    DatabaseHelper mDatabaseHelper;
-    private static final String TAG = "recherche";
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
+public class recherche extends AppCompatActivity{
+    protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.recherche);
-        mDatabaseHelper = new DatabaseHelper(this);
 
-        this.listView = (ListView) findViewById(R.id.listView);
-        DatabaseAccess databaseAccess = DatabaseAccess.getInstance(this);
-        databaseAccess.open();
-        List<String> getname = databaseAccess.getname();
-        databaseAccess.close();
-
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, android.R.id.text1, getname);
-        this.listView.setAdapter(adapter);
-
-        this.listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                String name = (String)adapterView.getItemAtPosition(i);
-
-                Toast toast = Toast.makeText(getApplicationContext(), "You Clicked on : " + name, Toast.LENGTH_SHORT);
-                toast.show();
-
-                Cursor data = mDatabaseHelper.getItemID(name); //get the id associated with that name
-
-                int itemID = -1;
-                while (data.moveToNext()) {
-                    itemID = data.getInt(0);
-                }
-                if(itemID > -1) {
-                    Intent produit = new Intent(recherche.this, produit.class);
-                    produit.putExtra("ID", itemID);
-                    produit.putExtra("Name", name);
-                    startActivity(produit);
-                }
-                else {
-                    Toast.makeText(getApplicationContext(), "No ID associated with that name", Toast.LENGTH_SHORT).show();
-                }
-
-            }
-        });
+        BottomNavigationView bottomNavigationView;
+        bottomNavigationView = (BottomNavigationView) findViewById(R.id.navigation);
+        bottomNavigationView.setSelectedItemId(R.id.imageButton4);
+        bottomNavigationView.setOnNavigationItemSelectedListener(navListener);
     }
+
+    private BottomNavigationView.OnNavigationItemSelectedListener navListener =
+            new BottomNavigationView.OnNavigationItemSelectedListener() {
+                @Override
+                public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+
+                    switch (item.getItemId()) {
+                        case R.id.imageButton:
+                            Intent produit = new Intent(recherche.this, calendrier.class);
+                            startActivity(produit);
+                            break;
+                        case R.id.imageButton2:
+                            Intent produit2 = new Intent(recherche.this, localisation.class);
+                            startActivity(produit2);
+                            break;
+                        case R.id.imageButton3:
+                            Intent produit3 = new Intent(recherche.this, MainActivity.class);
+                            startActivity(produit3);
+                            break;
+                        case R.id.imageButton4:
+                            break;
+                        case R.id.imageButton5:
+                            Intent produit5 = new Intent(recherche.this, logocentral.class);
+                            startActivity(produit5);;
+                            break;
+                    }
+
+                    return true;
+                }
+            };
 }

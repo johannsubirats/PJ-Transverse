@@ -3,7 +3,10 @@ package com.example.ecosystem;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.content.Intent;
+import android.support.annotation.NonNull;
+import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
+import android.view.MenuItem;
 import android.widget.TextView;
 
 public class produit extends AppCompatActivity {
@@ -17,6 +20,12 @@ public class produit extends AppCompatActivity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.produit);
+
+        BottomNavigationView bottomNavigationView;
+        bottomNavigationView = (BottomNavigationView) findViewById(R.id.navigation);
+        bottomNavigationView.setSelectedItemId(R.id.imageButton3);
+        bottomNavigationView.setOnNavigationItemSelectedListener(navListener);
+
         mDatabaseHelper = new DatabaseHelper(this);
 
 
@@ -49,4 +58,36 @@ public class produit extends AppCompatActivity {
         textView.setText(Description); //set text for text view
 
     }
+
+    private BottomNavigationView.OnNavigationItemSelectedListener navListener =
+            new BottomNavigationView.OnNavigationItemSelectedListener() {
+                @Override
+                public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+
+                    switch (item.getItemId()) {
+                        case R.id.imageButton:
+                            Intent produit = new Intent(produit.this, calendrier.class);
+                            startActivity(produit);
+                            break;
+                        case R.id.imageButton2:
+                            Intent produit2 = new Intent(produit.this, localisation.class);
+                            startActivity(produit2);
+                            break;
+                        case R.id.imageButton3:
+                            Intent produit3 = new Intent(produit.this, MainActivity.class);
+                            startActivity(produit3);
+                            break;
+                        case R.id.imageButton4:
+                            Intent produit4 = new Intent(produit.this, recherche.class);
+                            startActivity(produit4);
+                            break;
+                        case R.id.imageButton5:
+                            Intent produit5 = new Intent(produit.this, logocentral.class);
+                            startActivity(produit5);;
+                            break;
+                    }
+
+                    return true;
+                }
+            };
 }
