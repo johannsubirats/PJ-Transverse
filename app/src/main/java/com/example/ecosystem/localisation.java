@@ -43,19 +43,19 @@ public class localisation extends FragmentActivity implements OnMapReadyCallback
         // Add a marker Villejuif
 
         LatLng Decheterie= new LatLng(48.817154, 2.354736);
-        mMap.addMarker(new MarkerOptions().position(Decheterie).title("Déchétrie").icon(BitmapDescriptorFactory
+        mMap.addMarker(new MarkerOptions().position(Decheterie).title("Déchèterie").icon(BitmapDescriptorFactory
                 .defaultMarker(BitmapDescriptorFactory.HUE_GREEN)));
         LatLng Decheterie2= new LatLng(48.815681, 2.389288);
-        mMap.addMarker(new MarkerOptions().position(Decheterie2).title("Déchétrie mobile").icon(BitmapDescriptorFactory
+        mMap.addMarker(new MarkerOptions().position(Decheterie2).title("Déchèterie mobile").icon(BitmapDescriptorFactory
                 .defaultMarker(BitmapDescriptorFactory.HUE_ORANGE)));
         LatLng Decheterie3= new LatLng(48.807656, 2.349832);
-        mMap.addMarker(new MarkerOptions().position(Decheterie3).title("Déchétrie mobile").icon(BitmapDescriptorFactory
+        mMap.addMarker(new MarkerOptions().position(Decheterie3).title("Déchèterie mobile").icon(BitmapDescriptorFactory
                 .defaultMarker(BitmapDescriptorFactory.HUE_ORANGE)));
         LatLng Decheterie4= new LatLng(48.783170, 2.350832);
-        mMap.addMarker(new MarkerOptions().position(Decheterie4).title("Déchétrie mobile").icon(BitmapDescriptorFactory
+        mMap.addMarker(new MarkerOptions().position(Decheterie4).title("Déchèterie mobile").icon(BitmapDescriptorFactory
                 .defaultMarker(BitmapDescriptorFactory.HUE_ORANGE)));
         LatLng Decheterie5= new LatLng(48.799121, 2.319006);
-        mMap.addMarker(new MarkerOptions().position(Decheterie5).title("Déchétrie mobile de Syctom").icon(BitmapDescriptorFactory
+        mMap.addMarker(new MarkerOptions().position(Decheterie5).title("Déchèterie mobile de Syctom").icon(BitmapDescriptorFactory
                 .defaultMarker(BitmapDescriptorFactory.HUE_RED)));
         LatLng villejuif= new LatLng(48.7932012, 2.3559379);
         mMap.addMarker(new MarkerOptions().position(villejuif).title("Villejuif").icon(BitmapDescriptorFactory
